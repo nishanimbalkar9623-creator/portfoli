@@ -65,7 +65,7 @@ export default function Navbar() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontFamily: 'var(--font-pixel)', fontSize: '9px', color: '#fff', letterSpacing: '1px' }}>
-                NISHA.EXE
+                ANVAYA
               </span>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: '#888', letterSpacing: '1px' }}>
                 AI/ML DEVELOPER

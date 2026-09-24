@@ -174,18 +174,7 @@ export default function LiquidMetalHero({
   onSecondaryCtaClick,
   features = [],
 }: LiquidMetalHeroProps) {
-  const [typed, setTyped] = useState('');
-  const fullText = '> NISHA_AI_ML.EXE — INITIALIZING...';
 
-  useEffect(() => {
-    let i = 0;
-    const iv = setInterval(() => {
-      setTyped(fullText.slice(0, i + 1));
-      i++;
-      if (i >= fullText.length) clearInterval(iv);
-    }, 55);
-    return () => clearInterval(iv);
-  }, []);
 
   const itemVar: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -207,20 +196,6 @@ export default function LiquidMetalHero({
       {/* Center content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-8 flex flex-col items-center gap-10">
 
-        {/* Terminal typing line */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
-          className="text-center"
-        >
-          <span
-            style={{ fontFamily: 'var(--font-vt)', fontSize: '22px', color: '#aaa', letterSpacing: '2px' }}
-          >
-            {typed}
-            <span className="cursor-blink" />
-          </span>
-        </motion.div>
 
         {/* Badge */}
         {badge && (
@@ -266,6 +241,26 @@ export default function LiquidMetalHero({
             INSIGHTS,<br />
             PREDICTIONS &amp;<br />
             AI SOLUTIONS
+          </div>
+
+          {/* Taglines */}
+          <div style={{ display: 'flex', gap: '0', justifyContent: 'center', marginTop: '28px', flexWrap: 'wrap' }}>
+            {['Connecting Data.', 'Creating Intelligence.'].map((line, i) => (
+              <span
+                key={i}
+                style={{
+                  fontFamily: 'var(--font-vt)',
+                  fontSize: 'clamp(16px, 2vw, 26px)',
+                  color: i === 0 ? '#fff' : '#aaa',
+                  letterSpacing: '3px',
+                  padding: '6px 20px',
+                  borderLeft: i === 1 ? '2px solid #444' : 'none',
+                  lineHeight: 1.2,
+                }}
+              >
+                {line}
+              </span>
+            ))}
           </div>
         </motion.div>
 
